@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar{
+            background-color: #f3e6ff;
+            height: 100vh;
+            width: 200px;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+        }
+
+        .navbar{
+            background-color: #000066;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .menu-item{
+            padding: 5px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0 25px 25px 0;
+        }
+
+        .menu-item:hover{
+            border: 0.5px solid white;
+            background-color: #000066;
+        }
+
+        .menu-icon{
+            font-size: 18px;
+        }
+
+        .menu-text{
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+            font-size: 18px;
+        }
+
+        .hamburger-icon{
+            height: 30px;
+            width: 30px;
+            margin-left: 3px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #f3e6ff;
+        }
+
+        .hamburger-menu{
+            position: fixed;
+            top: 17px;
+            left: 18px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .close-menu{
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <div class="hamburger-icon">
+            <i class="fa-solid fa-bars menu-icon hamburger-menu" id="hamburger-menu" onclick="openSidebar()"></i>
+        </div>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="close-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark menu-icon"></i>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="##" class="menu-text">HOME</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-circle-info menu-icon"></i>
+            <a href="#" class="menu-text">ABOUT</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-phone menu-icon"></i>
+            <a href="#" class="menu-text">CONTACT</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-gear menu-icon"></i>
+            <a href="#" class="menu-text">SETTINGS</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-arrow-right-from-bracket menu-icon"></i>
+            <a href="#" class="menu-text">LOGOUT</a>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/d58d3c91c6.js" crossorigin="anonymous"></script>
+    <script>
+        const sidebarElement = document.getElementById('sidebar')
+        const hamburgerMenuElement = document.getElementById('hamburger-menu')
+        const navbarElement = document.getElementById('navbar')
+
+        function openSidebar() {
+            sidebarElement.style.visibility = "visible"
+            hamburgerMenuElement.style.visibility = "hidden"
+            
+            navbarElement.style.right = "0"
+        }
+
+        function closeSidebar() {
+            sidebarElement.style.visibility = "hidden"
+            hamburgerMenuElement.style.visibility = "visible"
+        }
+    </script>
+</body>
+</html>
